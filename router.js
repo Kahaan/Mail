@@ -21,6 +21,9 @@ class Router {
 
   activeRoute(){
     let hash = window.location.hash.substr(1)
+    return hash
   }
 
 }
+
+module.exports = Router

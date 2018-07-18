@@ -1,5 +1,11 @@
 
+const Router = require('./router')
+
 document.addEventListener("DOMContentLoaded", ()=> {
+
+let content = document.querySelectorAll(".content")
+router = new Router(content)
+router.start()
 
 let newLoc = ""
 
