@@ -1,7 +1,14 @@
+class Router {
 
+  constructor(node){
+    this.node = node
+  }
 
-function Router(node){
-  this.node = node
+  start(){
+    this.render(),
+    window.addEventListener("hashchange", (e) => {
+      this.render()
+    })
+  }
+
 }
-
-Router.prototype.start = window.addEventListener("hashchange", render)
