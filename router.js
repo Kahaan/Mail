@@ -11,4 +11,16 @@ class Router {
     })
   }
 
+  render() {
+    this.node.innerHTML = "";
+    let component = this.activeRoute();
+    if(component) {
+      this.node.appendChild(component.render());
+    }
+  }
+
+  activeRoute(){
+    let hash = window.location.hash.substr(1)
+  }
+
 }
