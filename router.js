@@ -24,7 +24,8 @@ class Router {
 
   activeRoute(){
     let hash = window.location.hash.substr(1)
-    return hash
+    let component = this.routes[hash]
+    return component
   }
 
 }
