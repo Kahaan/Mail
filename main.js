@@ -1,28 +1,22 @@
 
 let Router = require('./router')
-let inbox = require('./inbox')
+let Inbox = require('./inbox')
 
 
-document.addEventListener("DOMContentLoaded", ()=> {
+document.addEventListener("DOMContentLoaded", () => {
+  let content = document.querySelector(".content");
+  router = new Router(content, routes);
+  router.start();
+  window.location.hash = "#inbox";
+  let navItems = Array.from(document.querySelectorAll(".sidebar-nav li"));
+  navItems.forEach(navItem => {
+    navItem.addEventListener("click", () => {
+      let name = navItem.innerText.toLowerCase();
+      location.hash = name;
+    });
+  });
+});
 
-let content = document.querySelectorAll(".content")
-router = new Router(content)
-router.start()
-
-let newLoc = ""
-
-const handleLi = (el) => {
-  const li = el.target
-  newLoc = li.innerText.toLowerCase()
-  window.location.hash = newLoc
-}
-
-  document.querySelectorAll(".sidebar-nav li").forEach((li) => {
-    li.addEventListener("click", handleLi)
-  })
-
-
-})
 
 let routes = {
   inbox: Inbox

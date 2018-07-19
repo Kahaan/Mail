@@ -14,7 +14,8 @@ class Router {
     })
   }
 
-  render() {
+
+  render(){
     this.node.innerHTML = "";
     let component = this.activeRoute();
     if(component) {
