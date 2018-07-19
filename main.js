@@ -1,5 +1,7 @@
 
-const Router = require('./router')
+let Router = require('./router')
+let inbox = require('./inbox')
+
 
 document.addEventListener("DOMContentLoaded", ()=> {
 
@@ -20,6 +22,8 @@ const handleLi = (el) => {
   })
 
 
-
-
 })
+
+let routes = {
+  inbox: Inbox
+}

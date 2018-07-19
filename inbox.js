@@ -7,4 +7,5 @@ module.exports = {
     container.innerHTML = "An inbox message",
     return container
   }
+
 }
